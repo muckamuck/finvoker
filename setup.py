@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Finvoker',
-    version='0.0.2',
+    version='0.1.0',
     packages=find_packages(),
     description='Python Lambda Utility',
     author='Duke P. Takle',
