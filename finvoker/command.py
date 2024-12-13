@@ -20,7 +20,7 @@ logger.setLevel(logging.INFO)
 
 
 @click.group()
-@click.version_option(version='0.1.0')
+@click.version_option(version='0.1.1')
 def cli():
     '''
     The command line interface to Lambda Utility
@@ -42,7 +42,7 @@ def invoke(name, datafile):
         else:
             the_data = {
                 'event_data': None,
-                'invoker': 'finvoker - v0.1.0'
+                'invoker': 'finvoker - v0.1.1'
             }
     except Exception as wtf:
         logger.error(wtf, exc_info=True)
