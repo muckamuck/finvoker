@@ -7,7 +7,7 @@ import json
 import logging
 
 import click
-from utility import invoke_the_thing
+from finvoker.utility import invoke_the_thing
 
 logging.basicConfig(
     level=logging.WARNING,
