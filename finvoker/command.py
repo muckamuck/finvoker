@@ -29,15 +29,21 @@ def cli():
 
 @cli.command()
 @click.option('-n', '--name', help='name of the lambda', required=True)
-@click.option('-f', '--datafile', help='data file for the event', required=True)
+@click.option('-f', '--datafile', help='data file for the event', required=False)
 def invoke(name, datafile):
     '''
     Invoke a function
     '''
     the_data = None
     try:
-        with open(datafile, 'r') as stuff:
-            the_data = json.load(stuff)
+        if datafile:
+            with open(datafile, 'r') as stuff:
+                the_data = json.load(stuff)
+        else:
+            the_data = {
+                'event_data': None,
+                'invoker': 'finvoker - v0.1.0'
+            }
     except Exception as wtf:
         logger.error(wtf, exc_info=True)
         sys.exit(1)
